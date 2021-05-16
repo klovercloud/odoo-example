@@ -20,7 +20,12 @@ docker run -p 8069:8069 --name odoo --link db:db --read-only --tmpfs=/tmp -v /Us
 
 ####
 ### Run in KloverCloud
-- Create a PostgreSQL Server
+**Database**
+- Create a Postgres Server with a PgAdmin
+- Connect to your Postgres Server via PgAdmin and create a user for odoo having the priviledge to create databases
+- Do not create any database for odoo
+####
+**Application**
 - On-board this repository as Application
 - Assign minimum 1vCPU and 2.75GB RAM
 - Persistent Volume is required (Min 10 GB)
@@ -32,8 +37,8 @@ docker run -p 8069:8069 --name odoo --link db:db --read-only --tmpfs=/tmp -v /Us
 - Create Application
 - Set Environment Variables / Secrets to provide configurations for PostgreSQL
 ```
-HOST=<YOUR_POSTGRESQL_ENDPOINT>
-USER=<YOUR_POSTGRESQL_USERNAME>
-PASSWORD=<YOUR_POSTGRESQL_PASSWORD>
+HOST=<YOUR_POSTGRES_ENDPOINT>
+USER=<YOUR_POSTGRES_ODOO_USERNAME>
+PASSWORD=<YOUR_POSTGRES_ODOO_PASSWORD>
 ```
 - Deploy Odoo
