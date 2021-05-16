@@ -20,9 +20,20 @@ docker run -p 8069:8069 --name odoo --link db:db --read-only --tmpfs=/tmp -v /Us
 
 ####
 ### Run in KloverCloud
+- Create a PostgreSQL Server
 - On-board this repository as Application
 - Assign minimum 1vCPU and 2.75GB RAM
 - Persistent Volume is required (Min 10 GB)
-- The following paths should be in the Volume Mount paths\
-/var/lib/odoo\
+- The following paths should be in the Volume Mount paths
+```
+/var/lib/odoo
 /mnt/extra-addons
+```
+- Create Application
+- Set Environment Variables / Secrets to provide configurations for PostgreSQL
+```
+HOST=<YOUR_POSTGRESQL_ENDPOINT>
+USER=<YOUR_POSTGRESQL_USERNAME>
+PASSWORD=<YOUR_POSTGRESQL_PASSWORD>
+```
+- Deploy Odoo
