@@ -26,9 +26,10 @@ docker run -p 8069:8069 --name odoo --link db:db --read-only --tmpfs=/tmp -v /Us
 - Do not create any database for odoo
 ####
 **Application**
-- On-board this repository as Application
+- Modify the odoo.conf file based on your needs.
+- On-board this repository as Application. 
 - Assign minimum 1vCPU and 2.75GB RAM
-- Persistent Volume is required (Min 10 GB)
+- Persistent Volume is required (Min 5 GB)
 - The following paths should be in the Volume Mount paths
 ```
 /var/lib/odoo
